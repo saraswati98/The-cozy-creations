@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Glow & Go</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <h1 class="logo">🌸 Glow & Go</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Clothes</a></li>
+        <li><a href="#">Cart 🛒</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 🔐 Login/Signup Buttons -->
+  <div class="auth-buttons">
+    <button onclick="openModal('login')">Login</button>
+    <button onclick="openModal('signup')">Sign Up</button>
+  </div>
+
+  <!-- 🔐 Modal Form -->
+  <div class="modal" id="auth-modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="modal-title">Login</h2>
+
+      <form id="auth-form" onsubmit="handleAuth(event)">
+        <input type="text" id="username" placeholder="Username" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <button type="submit" id="submit-btn">Login</button>
+        <p id="switch-mode" onclick="toggleMode()">Don't have an account? Sign up</p>
+      </form>
+    </div>
+  </div>
+
+  <section class="hero">
+    <h2>Trendy Girls' Clothes, Budget Friendly</h2>
+    <p>Buy above ₹5000 and get a FREE makeup product 🎁</p>
+  </section>
+
+  <!-- Product List Section -->
+  <section id="product-list" class="product-list"></section>
+
+  <!-- 🔽 Cart Summary Section Added Below -->
+  <section id="cart-summary" class="cart-summary">
+    <h2>🛒 Cart Summary</h2>
+    <ul id="cart-items"></ul>
+    <p id="total-price">Total: ₹0</p>
+    <p id="gift-message" class="gift"></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Glow & Go — All rights reserved</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
